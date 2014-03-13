@@ -27,18 +27,25 @@
         <ul class="nav nav-tabs" style="margin-bottom: 15px;">
           <li class="active"><a href="#static" data-toggle="tab">Gambar Statis</a></li>
           <li class=""><a href="#stream" data-toggle="tab">Streaming</a></li>
+          <li class=""><a href="#info" data-toggle="tab"><i class="fa fa-info-circle"></i></a></li>
         </ul>
         <div id="myTabContent" class="tab-content">
           <div class="tab-pane fade active in" id="static">
-            <div class="well col-sm-6 col-lg-6 col-md-6">
+            <div id="divsnapshot" class="well col-sm-6 col-lg-6 col-md-6">
               <img src="http://192.168.2.9:8080/?action=snapshot" id="snapshotimg" alt="">
             </div>
             <div class="col-sm-6 col-lg-6 col-md-6">
-              <button onclick="reloadStaticImg()" type="button" class="btn btn-primary"><i class="fa fa-refresh"></i>&nbsp; Refresh gambar</button>
-              <br> <br>
               <p>
-                Klik tombol untuk memuat ulang gambar. <br>
-                Untuk streaming, klik pada tab <i>Streaming</i> di atas.
+                Gunakan tombol berikut untuk merubah posisi gambar.
+              </p>
+              <button onclick="javascript:void(0)" id="rotateSnapshotLeft" class="btn btn-primary"><i class="fa fa-rotate-left"></i></button>
+              <button onclick="javascript:void(0)" id="rotateSnapshotRight" class="btn btn-primary"><i class="fa fa-rotate-right"></i></button>
+              <p><br>
+                Klik tombol berikut untuk memuat ulang gambar.
+              </p>
+              <button onclick="reloadStaticImg()" type="button" class="btn btn-primary"><i class="fa fa-refresh"></i>&nbsp; Refresh gambar</button>
+              <p><br>
+                <i class="fa fa-youtube-play"></i> Untuk streaming, klik pada tab <i>Streaming</i> di atas.
               </p>
             </div>
           </div>
@@ -58,13 +65,23 @@
                 </p>
                 <br>
                 <div class="alert alert-success">
-                  <h4>Streaming dengan VLC</h4>
+                  <h4><i class="fa fa-youtube-play"></i>&nbsp; Streaming dengan VLC</h4>
                   <p>Anda bisa membuka streaming dengan VLC Media Player. Gunakan menu 'Open Network Stream' dan masukkan alamat berikut:</p>
                   <p><span class="label label-warning vlc"><b>http://<?=$lokal?>/stream/<?=$_GET['cctv']?></b></span></p>
                 </div>
               </div>
               
             </div>
+          </div>
+          <div class="tab-pane fade" id="info">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
           </div>
         </div>
         <?php

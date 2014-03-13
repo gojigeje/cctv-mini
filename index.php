@@ -351,16 +351,18 @@
       if ($lokal=="mini.sejak.tk") {
         ?>
           <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+          <script src="//jqueryrotate.googlecode.com/svn/trunk/jQueryRotate.js"></script>
           <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.0/js/bootstrap.min.js"></script>
         <?php
       } else {
         ?>
           <script src="js/jquery-1.10.2.js"></script>
+          <script src="js/jQueryRotate.js"></script>
           <script src="js/bootstrap.js"></script>
         <?php
       }
-      
     ?>
+         <script src="js/image.js"></script>
     <!-- <script src="js/stream.js"></script> -->
     <?php 
       // if (isset($_GET['cctv'])) {
