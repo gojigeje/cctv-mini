@@ -121,6 +121,20 @@
   font-size: 14px;
 }
 
+.flipHor {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.fotocctv {
+  margin: 15px auto;
+  transition: all 0.4s ease 0s;
+}
+
 @media (max-width:767px) {
 
 h1 {
