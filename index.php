@@ -50,6 +50,22 @@
      $nyala_wc1 = false;
      $thumbnail_1 = "img/offline.gif";
   }
+
+  // MINIFY HTML
+  function sanitize_output($buffer)
+  {
+      $search = array(
+          '/ {2,}/',
+          '/<!--.*?-->|\t|(?:\r?\n[ \t]*)+/s'
+      );
+      $replace = array(
+          ' ',
+          ''
+      );
+    $buffer = preg_replace($search, $replace, $buffer);
+      return $buffer;
+  }
+  ob_start("sanitize_output");
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +92,7 @@
       }
       
     ?>
-    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/simple-sidebar.min.css" rel="stylesheet">
 
 </head>
 
@@ -334,7 +350,7 @@
                         </div>
 
                         <div class="col-md-12">
-                          <p class="text-muted well">Made with <i class="fa fa-heart"></i> by <a href="http://twitter.com/gojigeje" target="_blank">@gojigeje</a> <br> &copy; 2013 <a href="http://mini.sejak.tk" target="_blank">@gojimini</a> , a lovely mini server :)</p>
+                          <p class="text-muted well">Made with <i class="fa fa-heart"></i> by <a href="http://twitter.com/gojigeje" target="_blank">@gojigeje</a> | source code available on <a href="http://github.com/gojigeje/cctv-mini" target="_blank">github</a>.<br> &copy; 2013 <a href="http://mini.sejak.tk" target="_blank">@gojimini</a> , a lovely mini server :)</p>
                         </div>
                         <?php
                       }
@@ -358,12 +374,12 @@
         ?>
           <script src="js/jquery-1.10.2.js"></script>
           <script src="js/jQueryRotate.js"></script>
-          <script src="js/bootstrap.js"></script>
+          <script src="js/bootstrap.min.js"></script>
         <?php
       }
     ?>
-         <script src="js/image.js"></script>
-    <!-- <script src="js/stream.js"></script> -->
+         <script src="js/image.min.js"></script>
+    <!-- <script src="js/stream.min.js"></script> -->
     <?php 
       // if (isset($_GET['cctv'])) {
       //   echo "<script>createImageLayer();</script>";
