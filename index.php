@@ -350,7 +350,7 @@
                         </div>
 
                         <div class="col-md-12">
-                          <p class="text-muted well">Made with <i class="fa fa-heart"></i> by <a href="http://twitter.com/gojigeje" target="_blank">@gojigeje</a> | source code available on <a href="http://github.com/gojigeje/cctv-mini" target="_blank">github</a>.<br> &copy; 2013 <a href="http://mini.sejak.tk" target="_blank">@gojimini</a> , a lovely mini server :)</p>
+                          <p class="text-muted well">Made with <i class="fa fa-heart"></i> by <a href="http://twitter.com/gojigeje" target="_blank">@gojigeje</a> | source code available on <a href="http://github.com/gojigeje/cctv-mini" target="_blank">github</a>.<br> &copy; 2014 <a href="http://mini.sejak.tk" target="_blank">@gojimini</a> , a lovely mini server :)</p>
                         </div>
                         <?php
                       }
