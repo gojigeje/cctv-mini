@@ -162,6 +162,7 @@ h1 {
 
 #menu-toggle {
   display: inline-block;
+  margin-right: 10px;
 }
 
 .inset {
