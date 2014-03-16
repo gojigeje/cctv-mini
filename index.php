@@ -26,7 +26,11 @@
      if ($a=="127.0.0.1") {
         $return = "localhost";
      } elseif (substr($a, 0, 10) === '192.168.2.') {
-        $return = "192.168.2.10";
+        if ($_SERVER['HTTP_HOST'] == "cctv.kos") {
+          $return = "cctv.kos";
+        } else {
+          $return = "192.168.2.10";
+        }
      } else {
         $return = "mini.sejak.tk";
      }
@@ -46,6 +50,7 @@
   if (is_resource($wc1)) {
      $nyala_wc1 = true;
      $thumbnail_1 = "http://192.168.2.9:8080/?action=snapshot";
+     $thumbnail_1_stream = "http://192.168.2.9:8080/?action=stream";
      fclose($wc1);
   } else {
      $nyala_wc1 = false;
@@ -78,7 +83,8 @@
     <meta name="description" content="A mini CCTV viewer">
     <meta name="author" content="Ghozy Arif Fajri">
     <title>cctv@gojimini</title>
-    
+    <link rel="shortcut icon" href="img/fav.png" />
+
     <?php 
       if ($lokal=="mini.sejak.tk") {
         ?>
@@ -130,6 +136,9 @@
 
                     <?php 
                       if (isset($_GET['list'])) {
+                        if (isset($_GET['stream'])) {
+                          $thumbnail_1 = $thumbnail_1_stream;
+                        }
                         ?>
 
                         <div class="col-md-12">
