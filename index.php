@@ -1,4 +1,4 @@
-<?php
+<?php 
   error_reporting(0);
   // GET CLIENT IP 
   function getRealIpAddr()
@@ -49,8 +49,7 @@
   $wc1 = @fsockopen("192.168.2.9", "8080");
   if (is_resource($wc1)) {
      $nyala_wc1 = true;
-     $thumbnail_1 = "http://192.168.2.9:8080/?action=snapshot";
-     $thumbnail_1_stream = "http://192.168.2.9:8080/?action=stream";
+     $thumbnail_1 = "/snapshot/1";
      fclose($wc1);
   } else {
      $nyala_wc1 = false;
@@ -136,9 +135,6 @@
 
                     <?php 
                       if (isset($_GET['list'])) {
-                        if (isset($_GET['stream'])) {
-                          $thumbnail_1 = $thumbnail_1_stream;
-                        }
                         ?>
 
                         <div class="col-md-12">
@@ -229,13 +225,13 @@
                         <?php
                       }
                       elseif (isset($_GET['cctv'])) {
-                        if (file_exists("cctv/".$_GET['cctv'].".php")) {
+                        if (file_exists("/website/cctv/cctv/".$_GET['cctv'].".php")) {
                           include "cctv/".$_GET['cctv'].".php";
                         } else {
                           ?>
                           <div class="col-md-12">
                             <div class="alert alert-warning">
-                              <h4>Kesalahan!</h4>
+                             <h4>Kesalahan!</h4>
                               <p>Index CCTV tidak ditemukan! <br>Pastikan Anda memasukkan alamat yang benar, atau jika Anda merasa halaman ini seharusnya ada, beritahukan admin agar segera diperbaiki :)</p>
                             </div>
                           </div>
@@ -360,7 +356,7 @@
                         </div>
 
                         <div class="col-md-12">
-                          <p class="text-muted well">Made with <i class="fa fa-heart"></i> by <a href="http://twitter.com/gojigeje" target="_blank">@gojigeje</a> | source code available on <a href="http://github.com/gojigeje/cctv-mini" target="_blank">github</a>.<br> &copy; 2014 <a href="http://mini.sejak.tk" target="_blank">@gojimini</a> , a lovely mini server :)</p>
+                          <p class="text-muted well">Made with <i class="fa fa-heart"></i> by <a href="http://twitter.com/gojigeje" target="_blank">@gojigeje</a> | source code available on <a href="http://github.com/gojigeje/cctv-mini" target="_blank">github</a>.<br> &copy; 2013 <a href="http://mini.sejak.tk" target="_blank">@gojimini</a> , a lovely mini server :)</p>
                         </div>
                         <?php
                       }
