@@ -1,9 +1,9 @@
 <script>
-  var streamURL = "http://192.168.2.9:8080/?action=stream";
+  var streamURL = "/stream/1";
 
   function reloadStaticImg() {
     var staticImg = document.getElementById('snapshotimg');
-    staticImg.src = 'http://192.168.2.9:8080/?action=snapshot&goji='+Math.random();
+    staticImg.src = '/snapshot/1?goji='+Math.random();
   }
 </script>
 
@@ -32,7 +32,7 @@
         <div id="myTabContent" class="tab-content">
           <div class="tab-pane fade active in" id="static">
             <div id="divsnapshot" class="well col-sm-6 col-lg-6 col-md-6">
-              <img src="http://192.168.2.9:8080/?action=snapshot" id="snapshotimg" alt="">
+              <img src="/snapshot/1" id="snapshotimg" alt="">
             </div>
             <div class="col-sm-6 col-lg-6 col-md-6">
               <p>
@@ -56,10 +56,10 @@
           </div>
           <div class="tab-pane fade" id="stream">
             <div id="stream">
-              <!-- <noscript><img src="http://192.168.2.9:8080/?action=stream" class="cctv" /></noscript> -->
+              <!-- <noscript><img src="/stream/1" class="cctv" /></noscript> -->
 
               <div class="well col-sm-6 col-lg-6 col-md-6">
-                <img src="http://192.168.2.9:8080/?action=stream" id="streamingimg" />
+                <img src="/stream/1" id="streamingimg" />
               </div>
               <div class="col-sm-6 col-lg-6 col-md-6">
                 <p>
